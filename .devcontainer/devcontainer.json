@@ -1,0 +1,19 @@
+{
+  "name": "AISTVM Windows VM host",
+  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "postStartCommand": "setsid -f bash .aistvm/setup.sh >/dev/null 2>&1",
+  "forwardPorts": [
+    8006,
+    3389
+  ],
+  "portsAttributes": {
+    "3389": {
+      "label": "Remote Desktop",
+      "onAutoForward": "silent"
+    },
+    "8006": {
+      "label": "Windows console",
+      "onAutoForward": "silent"
+    }
+  }
+}
